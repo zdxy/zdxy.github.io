@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>SVN的简单使用 | zdx_y</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="原则大家在使用的时候，一定要先更新，再提交[先update,再commit]。版本控制目的就是让多人协作更加方便，同时也能保证软件开发迭代过程中代码的备份。 使用 CheckOut出svn服务器对应的代码仓库。      更新你需要修改的代码   本地代码仓库文件上出现黄色警告图标说明与服务器仓库有冲突，需要更新，右键update;文件出现绿色图标，表示与服务器代码仓库一致，可以不用更新。  上传">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SVN的简单使用">
+<meta property="og:url" content="https://zdxy.github.io/2020/07/09/usesvn/index.html">
+<meta property="og:site_name" content="zdx_y">
+<meta property="og:description" content="原则大家在使用的时候，一定要先更新，再提交[先update,再commit]。版本控制目的就是让多人协作更加方便，同时也能保证软件开发迭代过程中代码的备份。 使用 CheckOut出svn服务器对应的代码仓库。      更新你需要修改的代码   本地代码仓库文件上出现黄色警告图标说明与服务器仓库有冲突，需要更新，右键update;文件出现绿色图标，表示与服务器代码仓库一致，可以不用更新。  上传">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://zdxy.github.io/images/checkout.jpg#pic_center">
+<meta property="og:image" content="https://zdxy.github.io/images/checkout1.png#pic_center">
+<meta property="og:image" content="https://zdxy.github.io/images/checkout2.png">
+<meta property="og:image" content="https://zdxy.github.io/images/update.jpg">
+<meta property="og:image" content="https://zdxy.github.io/images/commit.jpg">
+<meta property="og:image" content="https://zdxy.github.io/images/commit1.jpg">
+<meta property="og:image" content="https://zdxy.github.io/images/finished.png">
+<meta property="article:published_time" content="2020-07-09T05:45:10.000Z">
+<meta property="article:modified_time" content="2020-07-09T05:55:36.947Z">
+<meta property="article:author" content="Dong Xu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zdxy.github.io/images/checkout.jpg#pic_center">
+  
+    <link rel="alternate" href="/atom.xml" title="zdx_y" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon32.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zdx_y</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zdxy.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-usesvn" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/09/usesvn/" class="article-date">
+  <time datetime="2020-07-09T05:45:10.000Z" itemprop="datePublished">2020-07-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SVN的简单使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h3><p>大家在使用的时候，一定要先更新，再提交[先update,再commit]。版本控制目的就是让多人协作更加方便，同时也能保证软件开发迭代过程中代码的备份。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ol>
+<li>CheckOut出svn服务器对应的代码仓库。</li>
+</ol>
+<p><img src="/images/checkout.jpg#pic_center" alt="1.1在合适的文件夹检出代码"></p>
+<p><img src="/images/checkout1.png#pic_center" alt="1.2填入代码仓库的地址"></p>
+<p><img src="/images/checkout2.png" alt="1.3完成检出"></p>
+<ol start="2">
+<li>更新你需要修改的代码</li>
+</ol>
+<p><img src="/images/update.jpg" alt="2.1在你需要上传代码前先更新你对应的代码"></p>
+<p>本地代码仓库文件上出现<em>黄色警告图标</em>说明与服务器仓库有冲突，需要更新，右键<strong>update</strong>;文件出现<em>绿色图标</em>，表示与服务器代码仓库一致，可以不用更新。</p>
+<ol start="3">
+<li>上传提交你的代码或文件</li>
+</ol>
+<p><img src="/images/commit.jpg" alt="3.1右键添加你要上传代码的或文件"></p>
+<p><img src="/images/commit1.jpg" alt="3.2对上传代码的或文件添加描述并查看当前的状态"></p>
+<p><img src="/images/finished.png" alt="3.3完成对代码或文件的提交"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zdxy.github.io/2020/07/09/usesvn/" data-id="ckcedafsx000064v38xt4go4q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/06/oneday-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Oneday</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/09/usesvn/">SVN的简单使用</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/06/oneday-1/">Oneday</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/06/lxd-user/">如何使用你的Lxd容器</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/05/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Dong Xu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
